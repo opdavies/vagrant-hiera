@@ -1,5 +1,8 @@
 ---
 apache: httpd
+mysql: mysql
+
+apache::vhosts_dir: /etc/httpd/vhosts.d
 
 php::modules:
   - php
