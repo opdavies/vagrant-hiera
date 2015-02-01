@@ -8,3 +8,5 @@
 :hierarchy:
   - "osfamily/%{osfamily}"
   - common
+
+:merge_behavior: deeper
