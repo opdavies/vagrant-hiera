@@ -4,8 +4,8 @@ class php {
     source => 'puppet:///modules/php/var/www/html/info.php',
   }
 
-  $pkgs = hiera('php::modules')
-  package { $pkgs:
+  $modules = hiera('php::modules')
+  package { $modules:
     ensure => latest,
     notify => Service['httpd'],
   }
