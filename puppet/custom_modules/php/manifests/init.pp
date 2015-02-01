@@ -5,8 +5,9 @@ class php {
   }
 
   $modules = hiera('php::modules')
+  $apache = hiera('apache')
   package { $modules:
     ensure => latest,
-    notify => Service['httpd'],
+    notify => Service[$apache],
   }
 }
