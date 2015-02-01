@@ -11,7 +11,6 @@ Vagrant.configure(2) do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
 
   config.vm.provider "virtualbox" do |vb|
-    # Use VBoxManage to customize the VM. For example to change memory:
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
@@ -19,7 +18,7 @@ Vagrant.configure(2) do |config|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file = "site.pp"
     puppet.module_path = [ 'puppet/forge_modules', 'puppet/custom_modules' ]
-    puppet.working_directory = '/vagrant/hieradata'
+    puppet.hiera_config_path = 'hiera.yaml'
     puppet.options = "--verbose --debug"
     puppet.facter = {
       'vagrant' => '1',
