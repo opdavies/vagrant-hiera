@@ -1,0 +1,6 @@
+---
+apache: httpd
+
+php::modules:
+  - php
+  - php-cli
